@@ -2,7 +2,6 @@ package com.saadahmedsoft.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.saadahmedsoft.base.utils.onClicked
@@ -41,8 +40,6 @@ abstract class BaseActivity<BINDING: ViewBinding>(
 
     private fun initToolbar() {
         if (toolbarBinding != null) {
-            toolbarBinding?.toolbarTitle?.text = BaseFragment.FragmentPage.TITLE
-            toolbarBinding?.toolbarBtn?.visibility = if (BaseFragment.FragmentPage.IS_BACK_BUTTON_VISIBLE) View.VISIBLE else View.GONE
             toolbarBinding?.toolbarBtn?.onClicked {
                 super.onBackPressed()
                 Animator.animateSlideDown(this)
