@@ -29,10 +29,13 @@ abstract class BaseFragment<BINDING: ViewBinding>(
     abstract val isBackButtonVisible: Boolean
 
     abstract fun onFragmentCreate(savedInstanceState: Bundle?)
+    abstract fun observeData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = bindingInflater.invoke(layoutInflater)
+        FragmentPage.TITLE = title
+        FragmentPage.IS_BACK_BUTTON_VISIBLE = isBackButtonVisible
         onFragmentCreate(savedInstanceState)
     }
 
@@ -41,8 +44,6 @@ abstract class BaseFragment<BINDING: ViewBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        FragmentPage.TITLE = title
-        FragmentPage.IS_BACK_BUTTON_VISIBLE = isBackButtonVisible
         return _binding.root
     }
 
