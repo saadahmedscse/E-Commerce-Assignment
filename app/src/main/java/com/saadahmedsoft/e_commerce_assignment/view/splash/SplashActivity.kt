@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.saadahmedsoft.e_commerce_assignment.R
 import com.saadahmedsoft.e_commerce_assignment.helper.delay
-import com.saadahmedsoft.e_commerce_assignment.view.accountType.AccountTypeActivity
+import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
 import com.saadahmedsoft.shortintent.Anim
 import com.saadahmedsoft.shortintent.ShortIntent
 
@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
 
         delay(750) {
             ShortIntent.getInstance(this)
-                .addDestination(AccountTypeActivity::class.java)
+                .addDestination(DashboardActivity::class.java)
                 .addTransition(Anim.FADE)
                 .finish(this)
         }
