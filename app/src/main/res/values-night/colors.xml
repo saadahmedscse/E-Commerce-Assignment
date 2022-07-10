@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorWhite">#202020</color>
+    <color name="colorBlack">#FFFFFF</color>
+    <color name="colorGrey">#777777</color>
+    <color name="colorLightGrey">#202020</color>
+    <color name="colorDarkGrey">#E6E6E6</color>
+    <color name="mode_color">#FFF171</color>
+    <color name="home_icon_tint">#202020</color>
+    <color name="menu_item_color">#151515</color>
+</resources>
