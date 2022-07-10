@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk rootProject.ext.compile_sdk_version
 
     defaultConfig {
         applicationId "com.saadahmedsoft.e_commerce_assignment"
-        minSdk 21
-        targetSdk 32
+        minSdk rootProject.ext.min_sdk_version
+        targetSdk rootProject.ext.target_sdk_version
         versionCode 1
         versionName "1.0"
 
@@ -42,4 +42,14 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Short Intent
+    implementation "com.saadahmedev.shortintent:shortintent:$shortIntentVersion"
+
+    //Tiny DB
+    implementation "com.saadahmedev.tinydb:tinydb:$tinyDBVersion"
+
+    //sSP sDP
+    implementation "com.intuit.ssp:ssp-android:$spVersion"
+    implementation "com.intuit.sdp:sdp-android:$spVersion"
 }

@@ -8,3 +8,13 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    compile_sdk_version = 31
+    min_sdk_version = 23
+    target_sdk_version = 31
+
+    shortIntentVersion = '3.0.0'
+    tinyDBVersion = '1.0.0'
+    spVersion = '1.0.6'
+}
