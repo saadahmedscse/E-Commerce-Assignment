@@ -4,6 +4,7 @@
     package="com.saadahmedsoft.e_commerce_assignment">
 
     <application
+        android:name=".app.ECommerceAssignment"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,8 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ECommerceAssignment"
         tools:targetApi="31">
+        <activity android:name=".view.accountType.AccountTypeActivity"
+            android:exported="false"/>
         <activity
-            android:name=".DashboardActivity"
+            android:name=".view.dashboard.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".view.splash.SplashActivity"
