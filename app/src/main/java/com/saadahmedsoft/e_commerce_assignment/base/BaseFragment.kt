@@ -9,10 +9,16 @@ import androidx.viewbinding.ViewBinding
 import com.saadahmedsoft.base.utils.snackBar
 import com.saadahmedsoft.base.utils.toast
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants
+import kotlin.properties.Delegates
 
 abstract class BaseFragment<BINDING: ViewBinding>(
     private val bindingInflater: (inflater: LayoutInflater) -> BINDING
 ) : Fragment() {
+
+    object FragmentPage {
+        lateinit var TITLE: String
+        var IS_BACK_BUTTON_VISIBLE by Delegates.notNull<Boolean>()
+    }
 
     private lateinit var _binding: BINDING
 
@@ -21,7 +27,6 @@ abstract class BaseFragment<BINDING: ViewBinding>(
 
     abstract val title: String
     abstract val isBackButtonVisible: Boolean
-    abstract val isToolbarVisible: Boolean
 
     abstract fun onFragmentCreate(savedInstanceState: Bundle?)
 
@@ -36,10 +41,8 @@ abstract class BaseFragment<BINDING: ViewBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        if (isToolbarVisible) {
-            //dashboardActivity().binding.appToolbar.toolbarTitle.text = title
-            //dashboardActivity().binding.appToolbar.toolbarBtn.visibility = if (isBackButtonVisible) visible() else gone()
-        }
+        FragmentPage.TITLE = title
+        FragmentPage.IS_BACK_BUTTON_VISIBLE = isBackButtonVisible
         return _binding.root
     }
 
