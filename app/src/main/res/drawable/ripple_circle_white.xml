@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/mask"
-        android:drawable="@drawable/circle_item_color" />
+        android:drawable="@drawable/circle_white" />
 
 </ripple>
