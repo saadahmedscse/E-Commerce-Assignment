@@ -1,5 +1,8 @@
 package com.saadahmedsoft.e_commerce_assignment.utils
 
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
+
 class Constants {
     object App {
         const val APP_NAME = "E-Commerce Assignment"
@@ -16,5 +19,12 @@ class Constants {
 
     object User {
         const val IS_LOGGED_IN = "IS_LOGGED_IN"
+    }
+
+    object Durations {
+        const val SNACK_SHORT = Snackbar.LENGTH_SHORT
+        const val SNACK_LONG = Snackbar.LENGTH_LONG
+        const val TOAST_SHORT = Toast.LENGTH_SHORT
+        const val TOAST_LONG = Toast.LENGTH_LONG
     }
 }
