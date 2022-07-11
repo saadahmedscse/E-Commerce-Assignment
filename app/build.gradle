@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -57,4 +58,10 @@ dependencies {
     //sSP sDP
     implementation "com.intuit.ssp:ssp-android:$spVersion"
     implementation "com.intuit.sdp:sdp-android:$spVersion"
+
+    //Room Database
+    implementation "androidx.room:room-ktx:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
 }
