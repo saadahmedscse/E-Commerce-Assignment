@@ -43,4 +43,9 @@ abstract class BaseRecyclerAdapter<T: Any, VB: ViewDataBinding> : RecyclerView.A
         fun onItemClickListener(view: View, item: T, position: Int)
         fun onItemLongPressListener(view: View, item: T, position: Int)
     }
+
+    interface OnAdminItemActionListener<T> {
+        fun onEditClickListener(view: View, item: T, position: Int)
+        fun onDeleteClickListener(view: View, item: T, position: Int)
+    }
 }
