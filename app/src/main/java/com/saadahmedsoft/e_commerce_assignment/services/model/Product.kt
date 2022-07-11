@@ -12,5 +12,6 @@ data class Product(
     var name: String = "",
     var category: String = "",
     var price: String = "",
-    var description: String = ""
+    var description: String = "",
+    var isFavorite: Boolean = false
 )
