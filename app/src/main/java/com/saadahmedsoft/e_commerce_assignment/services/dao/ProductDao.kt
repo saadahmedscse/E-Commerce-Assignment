@@ -10,6 +10,9 @@ interface ProductDao {
     @Query("SELECT * FROM $TABLE_NAME ORDER BY id ASC")
     fun getProducts(): LiveData<List<Product>>
 
+    @Query("SELECT * FROM $TABLE_NAME WHERE isFavorite ORDER BY id DESC")
+    fun getFavorites(): LiveData<List<Product>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertProduct(product: Product)
 

@@ -26,6 +26,10 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
         return repository.getProducts()
     }
 
+    fun getFavorites(): LiveData<List<Product>> {
+        return repository.getFavorites()
+    }
+
     fun deleteProduct(id: Int) {
         return repository.deleteProduct(id)
     }

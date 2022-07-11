@@ -8,6 +8,8 @@ class ProductRepository(private val dao: ProductDao) {
 
     fun getProducts(): LiveData<List<Product>> = dao.getProducts()
 
+    fun getFavorites(): LiveData<List<Product>> = dao.getFavorites()
+
     fun insertProduct(product: Product) {
         dao.insertProduct(product)
     }
