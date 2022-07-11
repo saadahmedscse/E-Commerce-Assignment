@@ -12,6 +12,7 @@ import com.saadahmedsoft.e_commerce_assignment.databinding.FragmentHomeBinding
 import com.saadahmedsoft.e_commerce_assignment.helper.staggeredGridLayoutManager
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.FALSE
+import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.TRUE
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.home.adapter.ProductAdapter
 
@@ -61,5 +62,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun onItemLongPressListener(view: View, item: Product, position: Int) {
         //
+    }
+
+    override fun onFavoriteClickListener(view: View, item: Product, position: Int) {
+        viewModel.updateProduct(Product(
+            id = item.id,
+            bitmap = item.bitmap,
+            name = item.name,
+            category = item.category,
+            price = item.price,
+            description = item.description,
+            isFavorite = if (item.isFavorite) FALSE else TRUE
+        ))
     }
 }
