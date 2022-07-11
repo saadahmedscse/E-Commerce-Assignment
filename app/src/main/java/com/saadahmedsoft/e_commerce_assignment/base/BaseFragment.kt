@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.viewbinding.ViewBinding
 import com.saadahmedsoft.base.utils.snackBar
 import com.saadahmedsoft.base.utils.toast
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
+import com.saadahmedsoft.e_commerce_assignment.viewmodel.ProductViewModel
 
 abstract class BaseFragment<BINDING: ViewBinding>(
     private val bindingInflater: (inflater: LayoutInflater) -> BINDING
@@ -27,6 +29,7 @@ abstract class BaseFragment<BINDING: ViewBinding>(
     abstract fun observeData()
 
     private fun dashboardActivity() = (activity as DashboardActivity)
+    val viewModel: ProductViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
