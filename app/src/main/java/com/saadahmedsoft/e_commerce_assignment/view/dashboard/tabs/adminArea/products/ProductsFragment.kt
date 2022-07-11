@@ -1,7 +1,6 @@
 package com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.adminArea.products
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.saadahmedsoft.base.BaseFragment
 import com.saadahmedsoft.base.BaseRecyclerAdapter
@@ -12,7 +11,6 @@ import com.saadahmedsoft.e_commerce_assignment.R
 import com.saadahmedsoft.e_commerce_assignment.databinding.FragmentProductsBinding
 import com.saadahmedsoft.e_commerce_assignment.helper.linearLayoutManager
 import com.saadahmedsoft.e_commerce_assignment.helper.navigate
-import com.saadahmedsoft.e_commerce_assignment.helper.observe
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.FALSE
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.adminArea.products.adapter.ProductAdapter
@@ -33,8 +31,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
         ProductAdapter(requireContext(), this)
     }
 
-    private val TAG ="product_debug"
-
     override fun onFragmentCreate(savedInstanceState: Bundle?) {
         binding.recyclerView.layoutManager = linearLayoutManager(requireContext())
 
@@ -46,7 +42,6 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
         }
 
         viewModel.getProducts().observe(this) {
-            Log.d(TAG, "observeData: ${it.size}")
             if (it.isEmpty()) {
                 binding.layoutAddProduct.visible()
                 binding.addBtn.gone()
