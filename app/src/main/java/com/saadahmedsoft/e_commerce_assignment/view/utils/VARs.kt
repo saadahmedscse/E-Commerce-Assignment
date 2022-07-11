@@ -4,6 +4,7 @@ class VARs {
 
     object Product {
         var IMAGE = ""
+        var ID = 0
         var NAME = ""
         var CATEGORY = ""
         var PRICE = ""

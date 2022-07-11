@@ -16,6 +16,7 @@ import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.FALSE
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.adminArea.products.adapter.ProductAdapter
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.CATEGORY
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.DESCRIPTION
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.ID
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.IMAGE
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.NAME
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.PRICE
@@ -61,6 +62,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     override fun observeData() {}
 
     override fun onEditClickListener(view: View, item: Product, position: Int) {
+        ID = item.id!!
         IMAGE = item.bitmap
         NAME = item.name
         CATEGORY = item.category

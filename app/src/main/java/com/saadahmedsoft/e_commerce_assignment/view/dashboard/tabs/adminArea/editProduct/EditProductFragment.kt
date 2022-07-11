@@ -16,6 +16,7 @@ import com.saadahmedsoft.e_commerce_assignment.services.model.Product
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.CATEGORY
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.DESCRIPTION
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.ID
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.IMAGE
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.NAME
 import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.PRICE
@@ -87,7 +88,7 @@ class EditProductFragment : BaseFragment<FragmentAddProductBinding>(FragmentAddP
 
     private fun getProduct(): Product {
         return Product(
-            null,
+            ID,
             bitmapToString((binding.imgAddImage.drawable as BitmapDrawable).bitmap),
             name,
             category,
