@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.saadahmedsoft.e_commerce_assignment.services.dao.ProductDao
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
-import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Databse.TABLE_NAME
+import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Database.TABLE_NAME
 
 @Database(entities = [Product::class], version = 1, exportSchema = false)
 abstract class ProductDatabase : RoomDatabase() {
