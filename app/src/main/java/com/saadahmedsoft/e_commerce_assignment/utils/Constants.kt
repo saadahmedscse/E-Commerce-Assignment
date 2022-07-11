@@ -17,10 +17,6 @@ class Constants {
         const val FALSE = false
     }
 
-    object User {
-        const val IS_LOGGED_IN = "IS_LOGGED_IN"
-    }
-
     object Durations {
         const val SNACK_SHORT = Snackbar.LENGTH_SHORT
         const val SNACK_LONG = Snackbar.LENGTH_LONG
