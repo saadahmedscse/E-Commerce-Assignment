@@ -3,7 +3,7 @@ package com.saadahmedsoft.e_commerce_assignment.services.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
-import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Databse.TABLE_NAME
+import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Database.TABLE_NAME
 
 @Dao
 interface ProductDao {
