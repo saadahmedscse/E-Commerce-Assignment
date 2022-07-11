@@ -15,12 +15,15 @@
         android:theme="@style/Theme.ECommerceAssignment"
         tools:targetApi="31">
         <activity
+            android:name=".view.dashboard.tabs.details.DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.dashboard.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".view.splash.SplashActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.FullScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
