@@ -108,7 +108,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding>(ActivityDashboa
     private fun hideBottomNav() {
         binding.navView.startAnimation(slideBottom)
         delay(250) {
-            binding.navView.gone()
+            binding.navView.invisible()
         }
     }
 
