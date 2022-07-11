@@ -24,7 +24,11 @@ class Constants {
         const val TOAST_LONG = Toast.LENGTH_LONG
     }
 
-    object Databse {
+    object Database {
         const val TABLE_NAME = "Product_Table"
+    }
+
+    object Product {
+        const val KEY_PRODUCT = "Product_Key"
     }
 }
