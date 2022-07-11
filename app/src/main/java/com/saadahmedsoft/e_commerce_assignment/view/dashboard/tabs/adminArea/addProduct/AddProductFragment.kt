@@ -42,6 +42,8 @@ class AddProductFragment : BaseFragment<FragmentAddProductBinding>(FragmentAddPr
             initialize()
             if (validate()) {
                 viewModel.insertProduct(getProduct())
+                shortSnackBar("Product created successfully")
+                onBackPressed()
             }
         }
     }
@@ -65,12 +67,12 @@ class AddProductFragment : BaseFragment<FragmentAddProductBinding>(FragmentAddPr
 
     private fun getProduct(): Product {
         return Product(
-            id = null,
-            bitmap = bitmapToString((binding.imgAddImage.drawable as BitmapDrawable).bitmap),
-            name = name,
-            category = category,
-            price = price,
-            description = description
+            null,
+            bitmapToString((binding.imgAddImage.drawable as BitmapDrawable).bitmap),
+            name,
+            category,
+            price,
+            description
         )
     }
 
