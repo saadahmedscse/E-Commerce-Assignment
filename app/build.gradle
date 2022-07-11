@@ -64,4 +64,7 @@ dependencies {
     kapt "androidx.room:room-compiler:2.4.2"
     implementation "android.arch.persistence.room:runtime:1.1.1"
     kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    //Rounded image view
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
