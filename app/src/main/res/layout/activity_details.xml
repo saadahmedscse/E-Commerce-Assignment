@@ -131,7 +131,7 @@
                         android:fontFamily="@font/regular"
                         android:textSize="@dimen/_11ssp"
                         android:textColor="@color/colorDarkGrey"
-                        android:text="@{product.price}"
+                        android:text="@{product.price + `$`}"
                         android:layout_marginStart="@dimen/_10sdp"/>
 
                 </LinearLayout>
