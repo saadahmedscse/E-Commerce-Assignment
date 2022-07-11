@@ -53,7 +53,7 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
                 binding.addBtn.visible()
                 binding.layoutAddProduct.gone()
 
-                binding.recyclerView.adapter = adapter
+                binding.adapter = adapter
                 adapter.addItems(it)
             }
         }
