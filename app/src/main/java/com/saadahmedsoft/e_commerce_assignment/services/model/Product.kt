@@ -7,10 +7,10 @@ import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Databse.TABLE_NAM
 @Entity(tableName = TABLE_NAME)
 data class Product(
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = null,
-    val bitmap: String = "",
-    val name: String = "",
-    val category: String = "",
-    val price: String = "",
-    val description: String = ""
+    var id: Int? = null,
+    var bitmap: String = "",
+    var name: String = "",
+    var category: String = "",
+    var price: String = "",
+    var description: String = ""
 )
