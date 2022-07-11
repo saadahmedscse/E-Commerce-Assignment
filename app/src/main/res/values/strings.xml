@@ -26,4 +26,7 @@
 
     //Common
     <string name="no_product_found">No Product Found</string>
+
+    //Settings Fragment
+    <string name="theme_hint">Enable Dark Mode</string>
 </resources>
