@@ -15,8 +15,7 @@ class ProductAdapter(val context: Context, private val listener: OnItemActionLis
 
     override fun onBind(binding: ItemProductHomeBinding, item: Product, position: Int) {
         binding.productImage.setImageBitmap(stringToBitmap(item.bitmap))
-        binding.productName.text = item.name
-        binding.productPrice.text = "${item.price}$"
+        binding.product = item
 
         if (item.isFavorite) {
             binding.btnFavorite.setImageResource(R.drawable.ic_favorite_filled)

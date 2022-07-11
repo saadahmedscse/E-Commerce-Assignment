@@ -3,13 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="product"
+            type="com.saadahmedsoft.e_commerce_assignment.services.model.Product" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:background="@drawable/ripple_bg_light_grey_5"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/ripple_bg_light_grey_5"
         android:padding="@dimen/_5sdp">
 
         <androidx.cardview.widget.CardView
@@ -17,8 +25,8 @@
             android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"
             app:cardCornerRadius="@dimen/_5sdp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/product_image"
@@ -34,33 +42,35 @@
             android:id="@+id/product_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/image_card"
-            app:layout_constraintTop_toTopOf="@id/image_card"
             android:layout_marginStart="@dimen/_5sdp"
             android:fontFamily="@font/medium"
+            android:text="@{product.name}"
             android:textColor="@color/colorDarkGrey"
-            android:textSize="@dimen/_13ssp"/>
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="@id/image_card"
+            app:layout_constraintTop_toTopOf="@id/image_card" />
 
         <TextView
             android:id="@+id/et_product_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/image_card"
-            app:layout_constraintTop_toBottomOf="@id/product_title"
-            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/regular"
+            android:text="@{product.category}"
             android:textColor="@color/colorGrey"
-            android:textSize="@dimen/_11ssp"/>
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toEndOf="@id/image_card"
+            app:layout_constraintTop_toBottomOf="@id/product_title" />
 
         <ImageView
             android:id="@+id/btn_delete"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/ic_delete"
             android:background="@drawable/ripple_circle_white"
             android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
             app:tint="@color/colorRed"
             tools:ignore="ContentDescription" />
 
@@ -68,11 +78,11 @@
             android:id="@+id/btn_edit"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_delete"
             android:layout_marginEnd="@dimen/_8sdp"
-            android:src="@drawable/ic_edit"
             android:background="@drawable/ripple_circle_white"
             android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete"
             app:tint="@color/colorDarkGrey"
             tools:ignore="ContentDescription" />
 

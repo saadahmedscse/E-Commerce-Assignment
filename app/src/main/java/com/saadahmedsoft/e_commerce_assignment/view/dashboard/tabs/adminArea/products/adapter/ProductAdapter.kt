@@ -14,8 +14,7 @@ class ProductAdapter(val context: Context, private val listener: OnAdminItemActi
 
     override fun onBind(binding: ItemProductAdminBinding, item: Product, position: Int) {
         binding.productImage.setImageBitmap(stringToBitmap(item.bitmap))
-        binding.productTitle.text = item.name
-        binding.etProductCategory.text = item.category
+        binding.product = item
 
         binding.btnEdit.onClicked {
             listener.onEditClickListener(it, item, position)

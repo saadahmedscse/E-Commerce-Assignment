@@ -3,6 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="product"
+            type="com.saadahmedsoft.e_commerce_assignment.services.model.Product" />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/medium"
                 android:textSize="@dimen/_13ssp"
+                android:text="@{product.name}"
                 android:textColor="@color/colorDarkGrey"/>
 
             <TextView
@@ -55,6 +64,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/bold"
                 android:textSize="@dimen/_13ssp"
+                android:text="@{product.price}"
                 android:textColor="@color/static_main"/>
 
         </LinearLayout>
