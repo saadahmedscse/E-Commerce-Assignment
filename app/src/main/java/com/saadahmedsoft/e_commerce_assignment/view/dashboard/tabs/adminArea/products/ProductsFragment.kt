@@ -16,6 +16,11 @@ import com.saadahmedsoft.e_commerce_assignment.helper.observe
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.FALSE
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.adminArea.products.adapter.ProductAdapter
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.CATEGORY
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.DESCRIPTION
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.IMAGE
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.NAME
+import com.saadahmedsoft.e_commerce_assignment.view.utils.VARs.Product.PRICE
 
 class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsBinding::inflate), BaseRecyclerAdapter.OnAdminItemActionListener<Product> {
 
@@ -61,7 +66,12 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>(FragmentProductsB
     override fun observeData() {}
 
     override fun onEditClickListener(view: View, item: Product, position: Int) {
-        //go to edit section
+        IMAGE = item.bitmap
+        NAME = item.name
+        CATEGORY = item.category
+        PRICE = item.price
+        DESCRIPTION = item.description
+        navigate(view, R.id.product_to_edit_product)
     }
 
     override fun onDeleteClickListener(view: View, item: Product, position: Int) {
