@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.snackbar.Snackbar
 import com.saadahmedsoft.e_commerce_assignment.R
@@ -27,8 +28,8 @@ fun snackBar(context: Context, view: View, message: String, duration: Int) {
     snackText.typeface = font
     snackActionText.typeface = font
     snackActionText.isAllCaps = false
-    snackActionText.findColor(R.color.colorRed)
-    snackText.findColor(R.color.colorLightGrey)
+    snackActionText.setTextColor(ContextCompat.getColor(context, R.color.colorRed))
+    snackText.setTextColor(ContextCompat.getColor(context, R.color.colorLightGrey))
     snackBar.show()
 }
 
