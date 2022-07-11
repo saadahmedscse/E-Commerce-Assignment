@@ -9,7 +9,11 @@
         android:id="@+id/productsFragment"
         android:name="com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.adminArea.products.ProductsFragment"
         android:label="fragment_products"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/product_to_add_product"
+            app:destination="@id/addProductFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addProductFragment"
         android:name="com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.adminArea.addProduct.AddProductFragment"
