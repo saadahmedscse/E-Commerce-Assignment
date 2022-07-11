@@ -18,6 +18,17 @@ class ProductAdapter(val context: Context, private val listener: OnItemActionLis
         binding.productName.text = item.name
         binding.productPrice.text = "${item.price}$"
 
+        if (item.isFavorite) {
+            binding.btnFavorite.setImageResource(R.drawable.ic_favorite_filled)
+        }
+        else {
+            binding.btnFavorite.setImageResource(R.drawable.ic_favorite_border)
+        }
+
+        binding.btnFavorite.onClicked {
+            listener.onFavoriteClickListener(it, item, position)
+        }
+
         binding.root.onClicked {
             listener.onItemClickListener(it, item, position)
         }
