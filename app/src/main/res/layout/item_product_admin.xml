@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/ripple_bg_light_grey_5"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_card"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_placeholder"
+                tools:ignore="ContentDescription" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/product_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image_card"
+            app:layout_constraintTop_toTopOf="@id/image_card"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/_13ssp"/>
+
+        <TextView
+            android:id="@+id/et_product_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/image_card"
+            app:layout_constraintTop_toBottomOf="@id/product_title"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/_11ssp"/>
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_delete"
+            android:background="@drawable/ripple_circle_white"
+            android:padding="@dimen/_8sdp"
+            app:tint="@color/colorRed"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/btn_edit"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_delete"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:src="@drawable/ic_edit"
+            android:background="@drawable/ripple_circle_white"
+            android:padding="@dimen/_8sdp"
+            app:tint="@color/colorDarkGrey"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
