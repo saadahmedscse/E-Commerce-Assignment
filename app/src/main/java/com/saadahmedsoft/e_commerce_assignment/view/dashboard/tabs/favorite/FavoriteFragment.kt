@@ -56,6 +56,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(FragmentFavoriteB
                 KEY_PRODUCT, ParcelableProduct(
                     bitmap = item.bitmap,
                     name = item.name,
+                    price = item.price,
                     category = item.category,
                     description = item.description
                 )

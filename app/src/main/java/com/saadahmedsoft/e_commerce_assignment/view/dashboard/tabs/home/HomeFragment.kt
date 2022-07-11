@@ -45,7 +45,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 binding.recyclerView.visible()
                 binding.layoutNoProduct.gone()
 
-                binding.recyclerView.adapter = adapter
+                binding.adapter = adapter
                 adapter.addItems(it)
             }
         }
@@ -68,6 +68,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 KEY_PRODUCT, ParcelableProduct(
                     bitmap = item.bitmap,
                     name = item.name,
+                    price = item.price,
                     category = item.category,
                     description = item.description
                 )
