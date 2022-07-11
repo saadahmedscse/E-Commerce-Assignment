@@ -177,7 +177,7 @@
                     android:textSize="@dimen/_12ssp"
                     android:fontFamily="@font/medium"
                     android:textColor="@color/colorDarkGrey"
-                    android:text="Add to Cart"/>
+                    android:text="@string/add_to_cart"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
