@@ -23,4 +23,8 @@ class Constants {
         const val TOAST_SHORT = Toast.LENGTH_SHORT
         const val TOAST_LONG = Toast.LENGTH_LONG
     }
+
+    object Databse {
+        const val TABLE_NAME = "Product_Table"
+    }
 }
