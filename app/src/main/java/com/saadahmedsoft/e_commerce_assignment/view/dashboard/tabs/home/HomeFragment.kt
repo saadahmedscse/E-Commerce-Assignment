@@ -10,13 +10,20 @@ import com.saadahmedsoft.base.utils.gone
 import com.saadahmedsoft.base.utils.visible
 import com.saadahmedsoft.e_commerce_assignment.databinding.FragmentHomeBinding
 import com.saadahmedsoft.e_commerce_assignment.helper.staggeredGridLayoutManager
+import com.saadahmedsoft.e_commerce_assignment.services.model.ParcelableProduct
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.FALSE
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.TRUE
+import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Product.KEY_PRODUCT
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
+import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.details.DetailsActivity
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.home.adapter.ProductAdapter
+import com.saadahmedsoft.shortintent.Anim
+import com.saadahmedsoft.shortintent.ShortIntent
+import com.saadahmedsoft.tinydb.TinyDB
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate), BaseRecyclerAdapter.OnItemActionListener<Product> {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate),
+    BaseRecyclerAdapter.OnItemActionListener<Product> {
 
     override val title: String
         get() = "Home"
@@ -34,8 +41,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             if (it.isEmpty()) {
                 binding.layoutNoProduct.visible()
                 binding.recyclerView.gone()
-            }
-            else {
+            } else {
                 binding.recyclerView.visible()
                 binding.layoutNoProduct.gone()
 
@@ -57,7 +63,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun observeData() {}
 
     override fun onItemClickListener(view: View, item: Product, position: Int) {
-        //
+        TinyDB.getInstance(requireContext())
+            .putObject(
+                KEY_PRODUCT, ParcelableProduct(
+                    bitmap = item.bitmap,
+                    name = item.name,
+                    category = item.category,
+                    description = item.description
+                )
+            )
+            .apply()
+
+        ShortIntent.getInstance(requireActivity())
+            .addDestination(DetailsActivity::class.java)
     }
 
     override fun onItemLongPressListener(view: View, item: Product, position: Int) {
@@ -65,14 +83,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun onFavoriteClickListener(view: View, item: Product, position: Int) {
-        viewModel.updateProduct(Product(
-            id = item.id,
-            bitmap = item.bitmap,
-            name = item.name,
-            category = item.category,
-            price = item.price,
-            description = item.description,
-            isFavorite = if (item.isFavorite) FALSE else TRUE
-        ))
+        viewModel.updateProduct(
+            Product(
+                id = item.id,
+                bitmap = item.bitmap,
+                name = item.name,
+                category = item.category,
+                price = item.price,
+                description = item.description,
+                isFavorite = if (item.isFavorite) FALSE else TRUE
+            )
+        )
     }
 }
