@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:fontFamily="@font/bold"
-                android:text="@{product.price + `$`}"
+                android:text="@{`$` + product.price}"
                 android:textColor="@color/static_main"
                 android:textSize="@dimen/_13ssp" />
 
