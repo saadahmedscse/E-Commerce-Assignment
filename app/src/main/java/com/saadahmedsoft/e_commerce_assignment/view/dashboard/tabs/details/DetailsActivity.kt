@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.saadahmedsoft.base.BaseActivity
 import com.saadahmedsoft.base.utils.disable
 import com.saadahmedsoft.base.utils.makeViewOnly
+import com.saadahmedsoft.base.utils.onClicked
 import com.saadahmedsoft.base.utils.visible
 import com.saadahmedsoft.e_commerce_assignment.databinding.ActivityDetailsBinding
 import com.saadahmedsoft.e_commerce_assignment.databinding.AppToolbarBinding
@@ -17,6 +18,8 @@ class DetailsActivity : BaseActivity<ActivityDetailsBinding>(ActivityDetailsBind
     override val toolbarBinding: AppToolbarBinding
         get() = binding.appToolbar
 
+    private var count = 1
+
     override fun onActivityCreate(savedInstanceState: Bundle?) {
         toolbarBinding.toolbarBtn.visible()
         toolbarBinding.toolbarTitle.text = "Product Details"
@@ -25,6 +28,19 @@ class DetailsActivity : BaseActivity<ActivityDetailsBinding>(ActivityDetailsBind
             .getObject<ParcelableProduct>(KEY_PRODUCT, ParcelableProduct::class.java)
         binding.productImage.setImageBitmap(stringToBitmap(item.bitmap))
         binding.product = item
+        binding.quantityVar = count.toString()
+
+        binding.btnIncrease.onClicked {
+            count++
+            binding.quantityVar = count.toString()
+        }
+
+        binding.btnDecrease.onClicked {
+            if (count != 1) {
+                count--
+                binding.quantityVar = count.toString()
+            }
+        }
 
         makeLayoutsViewOnly()
     }
