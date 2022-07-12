@@ -11,7 +11,6 @@ import androidx.viewbinding.ViewBinding
 import com.saadahmedsoft.base.utils.snackBar
 import com.saadahmedsoft.base.utils.toast
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants
-import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
 import com.saadahmedsoft.e_commerce_assignment.viewmodel.ProductViewModel
 import com.saadahmedsoft.e_commerce_assignment.viewmodel.ToolbarViewModel
 
@@ -31,7 +30,6 @@ abstract class BaseFragment<BINDING: ViewBinding>(
     abstract fun onFragmentCreate(savedInstanceState: Bundle?)
     abstract fun observeData()
 
-    private fun dashboardActivity() = (activity as DashboardActivity)
     val viewModel: ProductViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
