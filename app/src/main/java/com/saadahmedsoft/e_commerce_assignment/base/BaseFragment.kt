@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.viewbinding.ViewBinding
 import com.saadahmedsoft.base.utils.snackBar
@@ -12,12 +13,14 @@ import com.saadahmedsoft.base.utils.toast
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
 import com.saadahmedsoft.e_commerce_assignment.viewmodel.ProductViewModel
+import com.saadahmedsoft.e_commerce_assignment.viewmodel.ToolbarViewModel
 
 abstract class BaseFragment<BINDING: ViewBinding>(
     private val bindingInflater: (inflater: LayoutInflater) -> BINDING
 ) : Fragment() {
 
     private lateinit var _binding: BINDING
+    private val toolbarViewModel by activityViewModels<ToolbarViewModel>()
 
     val binding: BINDING
         get() = _binding
@@ -42,8 +45,8 @@ abstract class BaseFragment<BINDING: ViewBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        dashboardActivity().toolbarBinding?.toolbarTitle?.text = title
-        dashboardActivity().toolbarBinding?.toolbarBtn?.visibility = if (isBackButtonVisible) View.VISIBLE else View.GONE
+        toolbarViewModel.setTitle(title)
+        toolbarViewModel.setBackButtonState(isBackButtonVisible)
         return _binding.root
     }
 
