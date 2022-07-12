@@ -10,7 +10,6 @@ import com.saadahmedsoft.base.utils.gone
 import com.saadahmedsoft.base.utils.visible
 import com.saadahmedsoft.e_commerce_assignment.databinding.FragmentHomeBinding
 import com.saadahmedsoft.e_commerce_assignment.helper.staggeredGridLayoutManager
-import com.saadahmedsoft.e_commerce_assignment.services.model.ParcelableProduct
 import com.saadahmedsoft.e_commerce_assignment.services.model.Product
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.FALSE
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Booleans.TRUE
@@ -18,7 +17,6 @@ import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Product.KEY_PRODU
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.DashboardActivity
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.details.DetailsActivity
 import com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.home.adapter.ProductAdapter
-import com.saadahmedsoft.shortintent.Anim
 import com.saadahmedsoft.shortintent.ShortIntent
 import com.saadahmedsoft.tinydb.TinyDB
 
@@ -65,14 +63,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onItemClickListener(view: View, item: Product, position: Int) {
         TinyDB.getInstance(requireContext())
             .putObject(
-                KEY_PRODUCT, ParcelableProduct(
-                    bitmap = item.bitmap,
-                    name = item.name,
-                    price = item.price,
-                    category = item.category,
-                    description = item.description
-                )
-            )
+                KEY_PRODUCT, item)
             .apply()
 
         ShortIntent.getInstance(requireActivity())
