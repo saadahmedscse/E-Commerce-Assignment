@@ -3,6 +3,7 @@ package com.saadahmedsoft.e_commerce_assignment.view.dashboard.tabs.details
 import android.os.Bundle
 import com.saadahmedsoft.base.BaseActivity
 import com.saadahmedsoft.base.utils.disable
+import com.saadahmedsoft.base.utils.makeViewOnly
 import com.saadahmedsoft.base.utils.visible
 import com.saadahmedsoft.e_commerce_assignment.databinding.ActivityDetailsBinding
 import com.saadahmedsoft.e_commerce_assignment.databinding.AppToolbarBinding
@@ -24,8 +25,19 @@ class DetailsActivity : BaseActivity<ActivityDetailsBinding>(ActivityDetailsBind
             .getObject<ParcelableProduct>(KEY_PRODUCT, ParcelableProduct::class.java)
         binding.productImage.setImageBitmap(stringToBitmap(item.bitmap))
         binding.product = item
-        binding.btnAddToCart.disable()
+
+        makeLayoutsViewOnly()
     }
 
     override fun observeData() {}
+
+    private fun makeLayoutsViewOnly() {
+        makeViewOnly(binding.colorLayout)
+        makeViewOnly(binding.img1)
+        makeViewOnly(binding.img2)
+        makeViewOnly(binding.img3)
+        makeViewOnly(binding.dummyTextPinned)
+        makeViewOnly(binding.layoutCoupon)
+        makeViewOnly(binding.btnAddToCart)
+    }
 }
