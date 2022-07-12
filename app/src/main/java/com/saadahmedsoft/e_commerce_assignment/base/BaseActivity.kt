@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.viewbinding.ViewBinding
 import com.saadahmedsoft.base.utils.onClicked
 import com.saadahmedsoft.base.utils.snackBar
@@ -15,6 +16,7 @@ import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Durations.SNACK_L
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Durations.SNACK_SHORT
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Durations.TOAST_LONG
 import com.saadahmedsoft.e_commerce_assignment.utils.Constants.Durations.TOAST_SHORT
+import com.saadahmedsoft.e_commerce_assignment.viewmodel.ProductViewModel
 import com.saadahmedsoft.e_commerce_assignment.viewmodel.ToolbarViewModel
 import com.saadahmedsoft.shortintent.Animator
 
@@ -24,6 +26,7 @@ abstract class BaseActivity<BINDING: ViewBinding>(
 
     private lateinit var _binding: BINDING
     private val toolbarViewModel by viewModels<ToolbarViewModel>()
+    val viewModel: ProductViewModel by viewModels()
 
     val binding: BINDING
         get() = _binding
