@@ -16,12 +16,10 @@
 
     //Activity Details
     <string name="add_to_cart">Add to Cart</string>
-    <string name="free_shipping">Free Shipping</string>
     <string name="dummy_pinned_text">6,300+ People pinned this</string>
     <string name="have_coupon">Have a coupon code? Apply here 👇</string>
     <string name="dummy_coupon">DSFRXA</string>
     <string name="available">Available</string>
-    <string name="one">1</string>
     <string name="dollar_symbol">$</string>
 
     //Fragment Add Product
