@@ -14,7 +14,21 @@ ext {
     min_sdk_version = 23
     target_sdk_version = 31
 
+    coreKtxVersion = '1.8.0'
+    appcompatVersion = '1.4.2'
+    materialVersion = '1.6.1'
+    constraintLayoutVersion = '2.1.4'
+    navigationKtxVersion = '2.5.0'
+    jUnitVersion = '4.13.2'
+    testJunitVersion = '1.1.3'
+    espressoCoreVersion = '3.4.0'
+
     shortIntentVersion = '3.0.0'
     tinyDBVersion = '1.0.0'
     spVersion = '1.0.6'
+
+    roomVersion = '2.4.2'
+    persistenceRoomVersion = '1.1.1'
+
+    roundedIvVersoin = '2.3.0'
 }
