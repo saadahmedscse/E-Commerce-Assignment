@@ -8,6 +8,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.saadahmedsoft.e_commerce_assignment.utils.Constants
 
 infix fun View.onClicked(onClick: (View) -> Unit) {
     setOnClickListener { onClick(it) }
@@ -20,6 +21,12 @@ infix fun View.onLongPressed(onPress: (View) -> Boolean){
 fun View.setBackground(@DrawableRes resId: Int) = setBackgroundResource(resId)
 
 fun Activity.findColor(@ColorRes resId: Int) = ContextCompat.getColor(this, resId)
+
+fun Activity.makeViewOnly(view: View) {
+    view.onClicked {
+        toast(this, "This is view only", Constants.Durations.TOAST_SHORT)
+    }
+}
 
 fun View.visible() {
     visibility = View.VISIBLE
