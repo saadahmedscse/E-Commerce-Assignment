@@ -9,6 +9,10 @@
             name="product"
             type="com.saadahmedsoft.e_commerce_assignment.services.model.ParcelableProduct" />
 
+        <variable
+            name="quantityVar"
+            type="String" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -324,7 +328,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:fontFamily="@font/bold"
-                android:text="@string/one"
+                android:text="@{quantityVar}"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@id/btn_decrease"
