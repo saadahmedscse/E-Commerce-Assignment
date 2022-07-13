@@ -13,6 +13,7 @@ import com.saadahmedsoft.e_commerce_assignment.R
 import com.saadahmedsoft.e_commerce_assignment.databinding.ActivityDashboardBinding
 import com.saadahmedsoft.e_commerce_assignment.databinding.AppToolbarBinding
 import com.saadahmedsoft.e_commerce_assignment.helper.delay
+import com.saadahmedsoft.e_commerce_assignment.helper.handleRowException
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding>(ActivityDashboardBinding::inflate) {
 
@@ -27,6 +28,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding>(ActivityDashboa
     private lateinit var adminGraph: NavGraph
 
     override fun onActivityCreate(savedInstanceState: Bundle?) {
+        handleRowException()
         slideTop = AnimationUtils.loadAnimation(this, R.anim.slide_top)
         slideBottom = AnimationUtils.loadAnimation(this, R.anim.slide_bottom)
 
