@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         setContentView(R.layout.activity_splash)
 
-        delay(750) {
+        delay(1500) {
             ShortIntent.getInstance(this)
                 .addDestination(DashboardActivity::class.java)
                 .addTransition(Anim.FADE)
